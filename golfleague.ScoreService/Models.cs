@@ -11,5 +11,6 @@ namespace golfleague.ScoreService
         public string NetScore { get; set; }
         public float OriginalHandicap { get; set; }
         public float NewHandicap { get; set; }
+        public string ScoreId { get; set; }
     }
 }
