@@ -14,34 +14,16 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "publish",
+            "label": "build-roster-service",
             "command": "dotnet",
             "type": "process",
             "args": [
-                "publish",
-                "${workspaceFolder}/golfleague.ScoreService/golfleague.ScoreService.csproj",
+                "build",
+                "${workspaceFolder}/golfleague.RosterService/golfleague.RosterService.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "watch",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "watch",
-                "run",
-                "${workspaceFolder}/golfleague.ScoreService/golfleague.ScoreService.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
-            ],
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "appId": "score-service",
-            "label": "daprd-down-score-service",
-            "type": "daprd-down"
         },
         {
             "label": "Dapr Score Service",
@@ -56,6 +38,25 @@
                 "5110",
                 "--dapr-grpc-port",
                 "5120",
+                "--placement-host-address",
+                "localhost:50005",
+                "--components-path",
+                "${workspaceFolder}/components/local"
+            ]
+        },
+        {
+            "label": "Dapr Roster Service",
+            "command": "dapr",
+            "args": [
+                "run",
+                "--app-id",
+                "roster-service",
+                "--app-port",
+                "5200",
+                "--dapr-http-port",
+                "5210",
+                "--dapr-grpc-port",
+                "5220",
                 "--placement-host-address",
                 "localhost:50005",
                 "--components-path",

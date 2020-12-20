@@ -23,6 +23,24 @@
             }
         },
         {
+            "name": "Debug Roster Service",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-roster-service",
+            "program": "${workspaceFolder}/golfleague.RosterService/bin/Debug/net5.0/golfleague.RosterService.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/golfleague.RosterService",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "http://127.0.0.1:5200",
+                "DAPR_HTTP_PORT": "5250"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach",
