@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+        @RenderSection("CSS",required:false)
+    </head>
+    <body>
+        <div class="gl-c-pagewrap">
+            <header class="header">
+                <h1>Business Men's Golf League</h1>            
+            </header>
+            <nav class="navbar">
+                <a href="#">Link</a>
+                <a href="#">Link</a>
+                <a href="#">Link</a>
+            </nav>
+            <main>
+                @RenderBody()
+            </main >
+            @RenderSection("Scripts",required:false)
+            <footer class="footer">
+                @if(IsSectionDefined("Footer")) 
+                {
+                    @RenderSection("Footer",required:false);
+                }
+                else
+                {
+                    <div>
+                        This is the footer
+                    </div>
+                }
+            </footer>
+        </div>
+    </body>
+</html>
