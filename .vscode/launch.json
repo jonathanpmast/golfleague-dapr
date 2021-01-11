@@ -44,11 +44,15 @@
             "name": "Debug UI",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-ui",
+            "preLaunchTask": "watch-ui",
             "program": "${workspaceFolder}/golfleague.ui/bin/Debug/net5.0/golfleague.ui.dll",
             "args": [],
             "cwd": "${workspaceFolder}/golfleague.ui",
             "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
                 "ASPNETCORE_URLS": "http://127.0.0.1:5300",

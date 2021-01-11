@@ -1,0 +1,136 @@
+@import '_config';
+
+body {
+  font-family: Arial;
+  margin: 0;
+  background-color:$backgroundColor;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.gl-c-pagewrap {
+    display:flex;
+    flex-direction:column;
+    min-height: 100vh;
+}
+/* Header/logo Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: $primaryColor;
+  color: white;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  display: flex;
+  background-color: #333;
+  margin-bottom:20px;
+
+  a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+        background-color: $backgroundColor;
+        color: black;
+    }
+  }
+}
+
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex:25%;
+  max-width: 50%;
+  padding: 0 4px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    
+    margin-bottom: 2em;
+
+    &:hover {
+        box-shadow: #333;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .cards {
+        display: flex;
+        flex-wrap:wrap;
+        justify-content:space-between;
+   }
+ 
+    .card {
+        flex: 0 1 calc(50% - 1em);
+    }
+}
+ 
+@media screen and (min-width: 60em) {
+    .card {
+        flex: 0 1 calc(25% - 1em);
+     }
+}
+ 
+
+/* Main column */
+.main {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+  background: #333;
+  color:white;
+}
+
+.main-container {
+    max-width: calc(100% - 10vw);
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.home-card {
+    min-height:200px;
+    border: solid 4px rgb(0, 0, 0);
+    background-color:rgb(194, 194, 194);
+    margin: 10px;
+    padding: 4px;
+}
+
+@media screen and (max-width: 700px) {
+    .row, .navbar {   
+        flex-direction: column;
+    }
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    .main-container {
+        max-width: calc(100% - 30px);
+        margin-left: 1vw;
+        margin-right: 1vw;
+    }
+}

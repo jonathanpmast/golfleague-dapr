@@ -31,6 +31,20 @@
             }
         },
         {
+            "label":"watch-ui",
+            "command":"dotnet",
+            "type":"process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}/golfleague.ui/golfleague.ui.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher":"$msCompile",
+            "options": {"cwd" : "${workspaceFolder}/golfleague.ui/"}
+        },
+        {
             "label": "build-roster-service",
             "command": "dotnet",
             "type": "process",
